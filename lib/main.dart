@@ -11,9 +11,7 @@ void main() {
   runApp(
     MultiBlocProvider(
       providers: [
-        BlocProvider(
-          create: (context) => getIt.get<HomeCubit>(),
-        ),
+        BlocProvider.value(value: getIt.get<HomeCubit>()),
       ],
       child: ResponsiveSizer(
         builder: (context, orientation, deviceType) {
