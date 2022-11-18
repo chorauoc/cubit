@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:price_tracker/routes/app_routes.dart';
+import 'package:price_tracker/routes/router.dart';
 import 'package:price_tracker/ui/home/cubit/home_cubit.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -27,10 +27,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
-      initialRoute: '/',
-      onGenerateRoute: RouteGenerator.router.onGenerate,
+      routerConfig: getIt.get<RouteGenerator>().routerConfig,
     );
   }
 }
