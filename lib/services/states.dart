@@ -1,0 +1,1 @@
+enum States{Initial,Loading,Complete,Error}
